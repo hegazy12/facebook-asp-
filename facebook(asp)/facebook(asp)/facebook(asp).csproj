@@ -141,6 +141,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PorfileController.cs" />
     <Compile Include="Controllers\userinfoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -195,6 +196,8 @@
     <Content Include="Views\userinfoes\Details.cshtml" />
     <Content Include="Views\userinfoes\Edit.cshtml" />
     <Content Include="Views\userinfoes\Index.cshtml" />
+    <Content Include="Views\Porfile\Index.cshtml" />
+    <Content Include="Views\Porfile\creatpost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

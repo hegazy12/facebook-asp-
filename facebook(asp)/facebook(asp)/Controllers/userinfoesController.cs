@@ -41,10 +41,7 @@ namespace facebook_asp_.Controllers
         {
             return View();
         }
-
-        // POST: userinfoes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(userinfo userinfo, string Repass, HttpPostedFileBase photo)
@@ -62,7 +59,6 @@ namespace facebook_asp_.Controllers
                     string _path = Path.Combine(Server.MapPath("~/photos"), _FileName);
                     photo.SaveAs(_path);
                     userinfo.photo = "/photos/" + _FileName;
-
                 }
 
                 db.userinfos.Add(userinfo);
@@ -87,13 +83,10 @@ namespace facebook_asp_.Controllers
             }
             return View(userinfo);
         }
-
-        // POST: userinfoes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Fname,lname,photo,city,country,email,phone,password")] userinfo userinfo)
+        public ActionResult Edit(userinfo userinfo)
         {
             if (ModelState.IsValid)
             {

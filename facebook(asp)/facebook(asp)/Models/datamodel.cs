@@ -11,33 +11,30 @@ namespace facebook_asp_.Models
         public datamodel() : base("fasebookdb")
         {
         }
-        public DbSet<userinfo> userinfos { get; set; }
-        public DbSet<post> posts { get; set; }
-        public DbSet<comments> comments { get; set; }
+        public DbSet<userinfo> userinfos {get; set;}
+        public DbSet<post> posts {get;set;}
+        public DbSet<comments> comments {get;set;}
         public DbSet<reacts> reacts { get; set; }
         public DbSet<friends> friends { get; set; }
         public DbSet<friendRequstes> friendRequstes { get; set; }
     } 
 
 
-public class userinfo
-{
-    public int Id { get; set; }
-    public string Fname { get; set; }
-    public string lname { get; set; }
-    public string photo { get; set; }
-    public string city { get; set; }
-    public string country { get; set; }
-    public string email { get; set; }
-    public string phone { get; set; }
-    public string password { get; set; }
-
-
-
-    public List<post> posts { get; set; }
-    public List<friends> friends { get; set; }
-    public List<friendRequstes> friendRequstes { get; set; }
-}
+    public class userinfo
+    {
+        public int Id { get; set; }
+        public string Fname { get; set; }
+        public string lname { get; set; }
+        public string photo { get; set; }
+        public string city { get; set; }
+        public string country { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
+        public string password { get; set; }
+        public List<post> posts { get; set; }
+        public List<friends> friends { get; set; }
+        public List<friendRequstes> friendRequstes { get; set; }
+        }
 
 public class post
 {

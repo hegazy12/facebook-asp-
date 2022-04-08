@@ -15,21 +15,22 @@ namespace facebook_asp_.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            Session["Iduser"] = 0.ToString();
+            Session["Iduser"] = "0";
             return View();
         }
 
         [HttpPost]
         public ActionResult Index(FormCollection form)
         {
-            userinfo u = user.login(form["email"].ToString(), form["pass"].ToString());
-
+            userinfo u = user.login(form["email"].ToString(),form["pass"].ToString());
+            
             if (u == null)
             {
                 return View();
             }
+             
             Session["Iduser"] = u.Id.ToString();
-            return View();
+            return RedirectToAction("Index", "Porfile");
         }
 
         public ActionResult About()
