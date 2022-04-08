@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="container">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-3 col-xs-12 Exame">
+            <a href="@Url.Action("Index","Profile",new {id = item.Id})">
+                <img src="@item.photo" class="img" height="111" />
+            </a>
+            <h3>@item.Fname @item.lname</h3>
+        </div>
+
+    }
+</div>
