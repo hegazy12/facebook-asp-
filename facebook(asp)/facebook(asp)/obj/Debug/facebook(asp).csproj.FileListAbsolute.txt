@@ -89,3 +89,4 @@ C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Deb
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).pdb
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.m.resources
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).csproj.GenerateResource.cache
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.gg.resources

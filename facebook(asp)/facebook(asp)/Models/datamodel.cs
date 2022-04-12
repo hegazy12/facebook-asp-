@@ -38,11 +38,10 @@ namespace facebook_asp_.Models
 
 public class post
 {
-    public int Id { get; set; }
-    public string postone { get; set; }
+    public int Id {get;set;}
+    public string postone {get; set;}
+    public int iduserinfo { get; set; }
     public userinfo userinfo { get; set; }
-
-
     public List<comments> comments { get; set; }
     public List<reacts> reacts { get; set; }
 }

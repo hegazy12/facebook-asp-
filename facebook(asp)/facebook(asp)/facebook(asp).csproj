@@ -140,6 +140,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PorfileController.cs" />
     <Compile Include="Controllers\userinfoesController.cs" />
@@ -149,6 +150,10 @@
     <Compile Include="Migrations\202204081912467_m.cs" />
     <Compile Include="Migrations\202204081912467_m.designer.cs">
       <DependentUpon>202204081912467_m.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204090511115_gg.cs" />
+    <Compile Include="Migrations\202204090511115_gg.designer.cs">
+      <DependentUpon>202204090511115_gg.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\datamodel.cs" />
@@ -167,6 +172,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\Comment.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -219,6 +225,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202204081912467_m.resx">
       <DependentUpon>202204081912467_m.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204090511115_gg.resx">
+      <DependentUpon>202204090511115_gg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

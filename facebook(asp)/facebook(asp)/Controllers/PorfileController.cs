@@ -18,27 +18,37 @@ namespace facebook_asp_.Controllers
             {
                 return RedirectToAction("Index","Home");
             }
-            userinfo userinfo = db.userinfos.Find(Convert.ToInt32(Session["Iduser"]));
+            
+            int x = Convert.ToInt32(Session["Iduser"]);
+
+            userinfo userinfo = new userinfo();
+            userinfo = db.userinfos.Find(x);
+            userinfo.posts = db.posts.Where(m => m.iduserinfo == x).ToList();
+
             if (userinfo == null)
             {
                 return RedirectToAction("Index", "Home");
             }
+            
             return View(userinfo);
         }
 
-
-        public ActionResult creatpost(string postcon)
+        [HttpGet]
+        public ActionResult creatpost()
         {
 
-            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult creatpost(string postcon)
+        {
             try
             {
+                int x = Convert.ToInt32(Session["Iduser"]);
                 userinfo userinfo = db.userinfos.Find(Convert.ToInt32(Session["Iduser"]));
                 post post = new post { postone = postcon, userinfo = userinfo };
+                post.iduserinfo = x;
                 db.posts.Add(post);
                 db.SaveChanges();
             }
@@ -46,8 +56,10 @@ namespace facebook_asp_.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            
-            return View();
+
+
+
+            return RedirectToAction("Index", "porfile");
         }
     }
 }
