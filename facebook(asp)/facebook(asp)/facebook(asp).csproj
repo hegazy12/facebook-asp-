@@ -141,6 +141,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\FriendController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PorfileController.cs" />
     <Compile Include="Controllers\userinfoesController.cs" />
@@ -154,6 +155,26 @@
     <Compile Include="Migrations\202204090511115_gg.cs" />
     <Compile Include="Migrations\202204090511115_gg.designer.cs">
       <DependentUpon>202204090511115_gg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204122134569_f8.cs" />
+    <Compile Include="Migrations\202204122134569_f8.designer.cs">
+      <DependentUpon>202204122134569_f8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204122315407_f9.cs" />
+    <Compile Include="Migrations\202204122315407_f9.designer.cs">
+      <DependentUpon>202204122315407_f9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204130235551_f10.cs" />
+    <Compile Include="Migrations\202204130235551_f10.designer.cs">
+      <DependentUpon>202204130235551_f10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204130256092_f12.cs" />
+    <Compile Include="Migrations\202204130256092_f12.designer.cs">
+      <DependentUpon>202204130256092_f12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204130313097_f13.cs" />
+    <Compile Include="Migrations\202204130313097_f13.designer.cs">
+      <DependentUpon>202204130313097_f13.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\datamodel.cs" />
@@ -201,13 +222,16 @@
     <Content Include="Views\userinfoes\Delete.cshtml" />
     <Content Include="Views\userinfoes\Details.cshtml" />
     <Content Include="Views\userinfoes\Edit.cshtml" />
-    <Content Include="Views\userinfoes\Index.cshtml" />
     <Content Include="Views\Porfile\Index.cshtml" />
     <Content Include="Views\Porfile\creatpost.cshtml" />
+    <Content Include="Views\userinfoes\Index.cshtml" />
+    <Content Include="Views\Porfile\Myfriend.cshtml" />
+    <Content Include="Views\Porfile\MyFriends.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="photos\" />
+    <Folder Include="Views\Friend\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -228,6 +252,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204090511115_gg.resx">
       <DependentUpon>202204090511115_gg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204122134569_f8.resx">
+      <DependentUpon>202204122134569_f8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204122315407_f9.resx">
+      <DependentUpon>202204122315407_f9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204130235551_f10.resx">
+      <DependentUpon>202204130235551_f10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204130256092_f12.resx">
+      <DependentUpon>202204130256092_f12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204130313097_f13.resx">
+      <DependentUpon>202204130313097_f13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

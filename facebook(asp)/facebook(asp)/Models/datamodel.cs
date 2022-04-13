@@ -17,6 +17,54 @@ namespace facebook_asp_.Models
         public DbSet<reacts> reacts { get; set; }
         public DbSet<friends> friends { get; set; }
         public DbSet<friendRequstes> friendRequstes { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+          /*  modelBuilder.Entity<post>()
+                .HasMany(d => d.comments)
+                .WithOptional()
+                .WillCascadeOnDelete(true);
+            
+            modelBuilder.Entity<post>()
+                .HasMany(d => d.reacts)
+                .WithOptional()
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<userinfo>()
+                .HasMany(d => d.posts)
+                .WithOptional()
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<userinfo>()
+                .HasMany(d => d.Comments)
+                .WithOptional()
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<userinfo>()
+                .HasMany(d => d.friendRequstes)
+                .WithOptional(u => u.userinfo)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<userinfo>()
+                .HasMany(d => d.friends)
+                .WithOptional()
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<userinfo>()
+                .HasMany(d => d.friendRequstes)
+                .WithOptional()
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<userinfo>()
+                .HasMany(d => d.friendRequstes)
+                .WithOptional()
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<userinfo>()
+                .HasMany(d => d.Reacts)
+                .WithOptional()
+                .WillCascadeOnDelete(true);
+          */
+        }
     } 
 
 
@@ -31,9 +79,12 @@ namespace facebook_asp_.Models
         public string email { get; set; }
         public string phone { get; set; }
         public string password { get; set; }
-        public List<post> posts { get; set; }
-        public List<friends> friends { get; set; }
-        public List<friendRequstes> friendRequstes { get; set; }
+        
+        public virtual List<reacts> Reacts {get; set;}
+        public virtual List<comments> Comments { get; set;} 
+        public virtual List<post> posts { get; set; }
+        public virtual List<friends> friends { get; set; }
+        public virtual List<friendRequstes> friendRequstes { get; set; }
         }
 
 public class post
@@ -41,9 +92,10 @@ public class post
     public int Id {get;set;}
     public string postone {get; set;}
     public int iduserinfo { get; set; }
-    public userinfo userinfo { get; set; }
-    public List<comments> comments { get; set; }
-    public List<reacts> reacts { get; set; }
+    public int role { get; set; }
+    public virtual userinfo userinfo { get; set; }
+    public virtual List<comments> comments { get; set; }
+    public virtual List<reacts> reacts { get; set; }
 }
 
 public class comments
@@ -54,33 +106,32 @@ public class comments
 
     public int idpost { get; set; }
     public int iduserinfo { get; set; }
-    public post post { get; set; }
-    public userinfo userinfo { get; set; }
+    public virtual post post { get; set; }
+    public virtual userinfo userinfo { get; set; }
 }
 
 public class reacts
 {
     public int Id { get; set; }
     public string react { get; set; }
-
-
     public int idpost { get; set; }
+    
     public int iduserinfo { get; set; }
-    public post post { get; set; }
-    public userinfo userinfo { get; set; }
+    public virtual post post { get; set; }
+    public virtual userinfo userinfo { get; set; }
 }
 
 public class friends
 {
     public int Id { set; get; }
     public int iduserinfo { get; set; }
-    public userinfo userinfo { get; set; }
+    public virtual userinfo userinfo { get; set; }
 }
 
 public class friendRequstes
 {
-    public int Id { set; get; }
-    public int iduserinfo { get; set; }
-    public userinfo userinfo { get; set; }
+    public int Id {set; get;}
+    public int idsender {get; set;}
+    public virtual userinfo userinfo { get; set; }
 }
 }

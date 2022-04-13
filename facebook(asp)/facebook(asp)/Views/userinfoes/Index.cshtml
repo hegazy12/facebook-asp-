@@ -1,43 +1,26 @@
-﻿@model IEnumerable<facebook_asp_.Models.userinfo>
+﻿@model IList<facebook_asp_.Models.userinfo>
 
 @{
     ViewBag.Title = "Index";
 }
+<style>
+    .user {
+        border-style: solid;
+        border-color: rgb(45, 52, 129);
+        margin: 20px;
+        padding:10px;
+    }
+</style>
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 
-<form method="post">
-    <div class="form-horizontal">
-
-        <div class="form-group">
-            <label class="control-label col-md-2"> Email </label>
-            <div class="col-md-10">
-                <input name="email" class="form-control" />
-            </div>
+<div class="row">
+    @{foreach(var item in Model)
+      {
+      <div class="col-sm-4 col-xs-12 user" >
+            <img src="@item.photo" height="100px" />
+            <h4>@item.Fname @item.lname</h4>
+            <a href="/userinfoes/Details/@item.Id" >go to details</a>     
         </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2"> Password </label>
-            <div class="col-md-10">
-                <input type="password" name="pass" class="form-control" />
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-1">
-                <input type="submit" value="send" class="btn btn-default" />
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <a href="@Url.Action("Create","userinfoes")">
-                    <input type="button" value="SinUp" class="btn btn-default" />
-                </a>
-            </div>
-        </div>
-
-    </div>
-</form>
+      }
+    }
+</div>

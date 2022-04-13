@@ -90,3 +90,8 @@ C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Deb
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.m.resources
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).csproj.GenerateResource.cache
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.gg.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f8.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f9.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f10.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f12.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f13.resources

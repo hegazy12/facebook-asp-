@@ -23,8 +23,7 @@ namespace facebook_asp_.Controllers
 
             userinfo userinfo = new userinfo();
             userinfo = db.userinfos.Find(x);
-            userinfo.posts = db.posts.Where(m => m.iduserinfo == x).ToList();
-
+            
             if (userinfo == null)
             {
                 return RedirectToAction("Index", "Home");
@@ -56,10 +55,27 @@ namespace facebook_asp_.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-
-
-
             return RedirectToAction("Index", "porfile");
+        }
+        public ActionResult Myfriend(int? id)
+        {
+            userinfo userinfo = new userinfo();
+
+            try
+            {
+                userinfo = db.userinfos.Find(Convert.ToInt32(id));
+            }
+            catch
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(userinfo);
+        }
+        public ActionResult MyFriends(int? id)
+        {
+
+            return View();
         }
     }
 }

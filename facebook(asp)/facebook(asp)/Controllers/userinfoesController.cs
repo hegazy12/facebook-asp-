@@ -18,12 +18,22 @@ namespace facebook_asp_.Controllers
         // GET: userinfoes
         public ActionResult Index()
         {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View(db.userinfos.ToList());
         }
 
         // GET: userinfoes/Details/5
         public ActionResult Details(int? id)
-        {
+        {   
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,13 +49,14 @@ namespace facebook_asp_.Controllers
         // GET: userinfoes/Create
         public ActionResult Create()
         {
+
             return View();
         }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(userinfo userinfo, string Repass, HttpPostedFileBase photo)
-        {
+        {   
             if (userinfo.password != Repass)
             {
                 return View(userinfo);
@@ -71,7 +82,12 @@ namespace facebook_asp_.Controllers
 
         // GET: userinfoes/Edit/5
         public ActionResult Edit(int? id)
-        {
+        {   
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+             
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -87,7 +103,8 @@ namespace facebook_asp_.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(userinfo userinfo)
-        {
+        {   
+             
             if (ModelState.IsValid)
             {
                 db.Entry(userinfo).State = EntityState.Modified;
@@ -99,7 +116,12 @@ namespace facebook_asp_.Controllers
 
         // GET: userinfoes/Delete/5
         public ActionResult Delete(int? id)
-        {
+        {   
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

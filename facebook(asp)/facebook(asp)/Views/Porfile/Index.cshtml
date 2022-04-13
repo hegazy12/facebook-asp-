@@ -51,6 +51,13 @@
                    <input type="text" id="@item.Id" class="w3-input w3-border" />
                    <input type="button" onclick="sendcomment('@item.Id','@Session["Iduser"]')" value="send"/>
                </div>
+               @{foreach(var comm in item.comments){
+                 <div class="comment">
+                     <a><h4>@comm.userinfo.Fname  @comm.userinfo.lname</h4></a>
+                     <h5>@comm.comment</h5>
+                 </div>
+                } 
+               }
           </div>
           
       }
