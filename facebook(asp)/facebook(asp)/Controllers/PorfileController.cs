@@ -58,6 +58,7 @@ namespace facebook_asp_.Controllers
             }
             return RedirectToAction("Index", "porfile");
         }
+
         public ActionResult Myfriend(int? id)
         {
             userinfo userinfo = new userinfo();
@@ -73,12 +74,36 @@ namespace facebook_asp_.Controllers
 
             return View(userinfo);
         }
-        public ActionResult MyFriends(int? id)
+
+        public ActionResult MyFriends()
         {
-            return View();
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            int x1 = Convert.ToInt32(Session["Iduser"]);
+            List<friends> friends = db.friends.Where(x => x.idfriend == x1).ToList();
+            
+            return View(friends);
         }
 
-        // GET: posts/EditPost/5
+        public ActionResult MyRequests()
+        {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            int x1 = Convert.ToInt32(Session["Iduser"]);
+            List<friendRequstes> Requstes = db.friendRequstes.Where(x => x.idfriend == x1).ToList();
+            List<userinfo> userinfos = new List<userinfo>();
+            foreach(var item in Requstes)
+            {
+                userinfos.Add(db.userinfos.Find(item.idfriend));
+            }
+            return View(userinfos);
+        }
+        
+        // GET: Porfile/EditPost/5
         public ActionResult EditPost(int? id)
         {
             if (id == null)
@@ -94,13 +119,16 @@ namespace facebook_asp_.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditPost(FormCollection form)
-        {
-
+        public ActionResult EditPost(int? id,FormCollection form)
+        {   
 
             post post = new post();
+            post = db.posts.Find(Convert.ToInt32(id));
             post.postone = form["postcon"];
             post.role = Convert.ToInt32(form["role"]);
+            post.userinfo = db.userinfos.Find(Convert.ToInt32(Session["Iduser"]));
+            post.iduserinfo = Convert.ToInt32(Session["Iduser"]);
+            
             if (ModelState.IsValid)
             {
                 db.Entry(post).State = EntityState.Modified;

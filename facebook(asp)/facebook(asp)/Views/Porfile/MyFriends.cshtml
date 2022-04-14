@@ -1,5 +1,24 @@
-﻿@model IList<facebook_asp_.Models.userinfo>
+﻿@model IList<facebook_asp_.Models.friends>
 
-@{
-    ViewBag.Title = "MyFriends";
-}
+
+<style>
+    .user {
+        border-style: solid;
+        border-color: rgb(45, 52, 129);
+        margin: 20px;
+        padding: 10px;
+    }
+</style>
+
+
+<div class="row">
+    @{foreach (var item in Model)
+        {
+            <div class="col-sm-4 col-xs-12 user">
+                <img src="@item.userinfo.photo" height="100px" />
+                <h4>@item.userinfo.Fname @item.userinfo.lname</h4>
+                <a href="/Porfile/Myfriend/@item.userinfo.Id">Go To Porfile</a>
+            </div>
+        }
+    }
+</div>

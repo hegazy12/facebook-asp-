@@ -1,0 +1,26 @@
+﻿@model IList<facebook_asp_.Models.userinfo>
+
+@{
+    ViewBag.Title = "MyRequests";
+}
+<style>
+    .user {
+        border-style: solid;
+        border-color: rgb(45, 52, 129);
+        margin: 20px;
+        padding: 10px;
+    }
+</style>
+
+
+<div class="row">
+    @{foreach (var item in Model)
+        {
+            <div class="col-sm-4 col-xs-12 user">
+                <img src="@item.photo" height="100px" />
+                <h4>@item.Fname @item.lname</h4>
+                <h5><a href="/Friend/Accept/@item.Id">Accepting</a></h5>
+            </div>
+        }
+    }
+</div>

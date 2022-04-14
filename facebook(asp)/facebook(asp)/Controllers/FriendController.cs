@@ -13,12 +13,37 @@ namespace facebook_asp_.Controllers
 
         public ActionResult Addfriend(int? id)
         {
+            int iduser = Convert.ToInt32(Session["Iduser"]);
+            int idfriend = Convert.ToInt32(id);
+            db.friendRequstes.RemoveRange(db.friendRequstes.Where(m=>m.idsender == iduser && m.idfriend == idfriend).ToList());
+            db.SaveChanges();
+         
             friendRequstes friendRequstes = new friendRequstes();
-            friendRequstes.idsender = Convert.ToInt32(Session["Iduser"]);
-            friendRequstes.userinfo = db.userinfos.Find(id);
+            friendRequstes.idsender = iduser;
+            friendRequstes.idfriend = idfriend;
+            friendRequstes.userinfo = db.userinfos.Find(idfriend);
             db.friendRequstes.Add(friendRequstes);
             db.SaveChanges();
             return RedirectToAction("Index", "userinfoes");
         }
+
+
+        public ActionResult Accept(int? id)
+        {
+            int iduser = Convert.ToInt32(Session["Iduser"]);
+            int idfriend = Convert.ToInt32(id);
+            db.friends.RemoveRange(db.friends.Where(m=>m.iduserinfo == iduser && m.idfriend == idfriend).ToList());
+            db.SaveChanges();
+
+            friends friend = new friends();
+            friend.idfriend = idfriend;
+            friend.iduserinfo = iduser;
+            friend.userinfo = db.userinfos.Find(idfriend);
+            db.friends.Add(friend);
+            db.SaveChanges();
+            
+            return RedirectToAction("Index", "userinfoes");
+        }
+
     }
 }

@@ -20,8 +20,7 @@ namespace facebook_asp_.Controllers
                 int idpost = Convert.ToInt32(HttpContext.Current.Request.Form["idpost"]);
                 int rea = Convert.ToInt32(HttpContext.Current.Request.Form["react"]);
                 
-
-                db.reacts.RemoveRange(db.reacts.Where(m=>m.idpost==idpost && m.iduserinfo==idpost).ToList());
+                db.reacts.RemoveRange(db.reacts.Where(m=>m.idpost==idpost && m.iduserinfo== iduser).ToList());
                 db.SaveChanges();
 
                 reacts react = new reacts();
@@ -33,11 +32,11 @@ namespace facebook_asp_.Controllers
                 db.reacts.Add(react);
                 db.SaveChanges();
 
-                return "goodjob";
+                return "GoodJob";
             }
             catch
             {
-                return "badjob";
+                return "BadJob";
             } 
         }
     }

@@ -22,8 +22,11 @@ namespace facebook_asp_.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+            int x = Convert.ToInt32(Session["Iduser"]);
 
-            return View(db.userinfos.ToList());
+            List<userinfo> userinfos = db.userinfos.Where(m=>m.Id !=x).ToList();
+            
+            return View(userinfos);
         }
 
         // GET: userinfoes/Details/5
@@ -54,7 +57,6 @@ namespace facebook_asp_.Controllers
         }
         
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(userinfo userinfo, string Repass, HttpPostedFileBase photo)
         {   
             if (userinfo.password != Repass)
@@ -81,17 +83,14 @@ namespace facebook_asp_.Controllers
         }
 
         // GET: userinfoes/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit()
         {   
             if (Session["Iduser"] == "0" || Session["Iduser"] == null)
             {
                 return RedirectToAction("Index", "Home");
             }
-             
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
+            int id = Convert.ToInt32(Session["Iduser"]);
             userinfo userinfo = db.userinfos.Find(id);
             if (userinfo == null)
             {
@@ -101,7 +100,6 @@ namespace facebook_asp_.Controllers
         }
          
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Edit(userinfo userinfo)
         {   
              
@@ -136,15 +134,13 @@ namespace facebook_asp_.Controllers
 
         // POST: userinfoes/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             userinfo userinfo = db.userinfos.Find(id);
             db.userinfos.Remove(userinfo);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
+        } 
         protected override void Dispose(bool disposing)
         {
             if (disposing)

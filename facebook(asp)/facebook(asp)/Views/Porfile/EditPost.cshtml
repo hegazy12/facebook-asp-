@@ -4,7 +4,7 @@
     ViewBag.Title = "EditPost";
 }
 
-<form>
+<form method="post" >
     <div class="form-horizontal">
         <div class="form-group">
             <label class="control-label col-md-2"> Post </label>
@@ -15,13 +15,13 @@
         <div class="form-group">
             <label class="control-label col-md-2"> Privet </label>
             <div class="col-md-10">
-                <input type="radio" name="role" value="1" />
+               <input type="radio" name="role" value="1" />
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-2"> Puplic </label>
             <div class="col-md-10">
-                <input type="radio" name="role" value="0" />
+                <input type="radio" name="role" value="0" checked/>
             </div>
         </div>
 

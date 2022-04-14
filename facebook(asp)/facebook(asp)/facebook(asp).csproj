@@ -185,6 +185,14 @@
     <Compile Include="Migrations\202204132332301_f16.designer.cs">
       <DependentUpon>202204132332301_f16.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204141316248_f17.cs" />
+    <Compile Include="Migrations\202204141316248_f17.designer.cs">
+      <DependentUpon>202204141316248_f17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204141318340_f18.cs" />
+    <Compile Include="Migrations\202204141318340_f18.designer.cs">
+      <DependentUpon>202204141318340_f18.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\datamodel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -239,6 +247,7 @@
     <Content Include="Views\Porfile\Myfriend.cshtml" />
     <Content Include="Views\Porfile\MyFriends.cshtml" />
     <Content Include="Views\Porfile\EditPost.cshtml" />
+    <Content Include="Views\Porfile\MyRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -286,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204132332301_f16.resx">
       <DependentUpon>202204132332301_f16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204141316248_f17.resx">
+      <DependentUpon>202204141316248_f17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204141318340_f18.resx">
+      <DependentUpon>202204141318340_f18.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

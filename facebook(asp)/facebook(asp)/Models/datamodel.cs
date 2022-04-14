@@ -126,13 +126,15 @@ public class friends
 {
     public int Id { set; get; }
     public int iduserinfo { get; set; }
+    public int idfriend { get; set; }
     public virtual userinfo userinfo { get; set; }
 }
 
 public class friendRequstes
 {
-    public int Id {set; get;}
-    public int idsender {get; set;}
-    public virtual userinfo userinfo { get; set; }
+    public int Id {set;get;}
+    public int idsender {get;set;}
+    public int idfriend {get;set;}
+    public virtual userinfo userinfo {get;set;}
 }
 }

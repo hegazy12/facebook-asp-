@@ -16,13 +16,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @{if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+                    {
+                        @Html.ActionLink("Facebook", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    }
+                    else
+                    {
+                       @Html.ActionLink("Mypage", "Index", "Porfile", new { area = "" }, new { @class = "navbar-brand" })
+                    }
+                }
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @{if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+                        {
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("MyFriends", "MyFriends", "Porfile")</li>
+                            <li>@Html.ActionLink("MyRequests", "MyRequests", "Porfile")</li>
+                            <li>@Html.ActionLink("People", "Index", "userinfoes")</li>
+                            <li>@Html.ActionLink("Edit", "Edit", "userinfoes")</li>
+                            <li>@Html.ActionLink("logout", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                        }
+                    }
+
+
+
                 </ul>
             </div>
         </div>

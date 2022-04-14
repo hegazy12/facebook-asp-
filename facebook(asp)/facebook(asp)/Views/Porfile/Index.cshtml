@@ -1,6 +1,8 @@
 ﻿@model facebook_asp_.Models.userinfo
+
 @{
     ViewBag.Title = "Index";
+
 }
 
 <style>
@@ -33,7 +35,6 @@
         margin-left: 8px;
         padding: 3px;
     }
-
 </style>
 
 <br />
@@ -54,37 +55,62 @@
 
 <div>
     @{foreach (var item in Model.posts)
-        {
-            <div id="P_@item.Id" class="col-sm-12 col-xs-12 post">
-                <div>
-                    <h2>@item.postone</h2>
-                </div>
-                
-                <div class="col-sm-12 col-xs-12 ">
-                    <div class="col-sm-3 col-xs-3 reacr" >
-                        <input type="button" value="Like" onclick="sendReact('@item.Id','@Session["Iduser"]',1)" />
-                    </div>
-                    <div class="col-sm-3 col-xs-3 reacr" >
-                        <input type="button" value="DisLike" onclick="sendReact('@item.Id','@Session["Iduser"]',0)" />
+                {
 
-                    </div>
-                </div>
-                
-                <div class="comment">
-                    <input type="text" id="@item.Id" class="w3-input w3-border" />
-                    <input type="button" onclick="sendcomment('@item.Id','@Session["Iduser"]')" value="send" />
-                </div>
-                @{foreach (var comm in item.comments)
-                    {
-                        <div class="comment">
-                            <a><h4>@comm.userinfo.Fname  @comm.userinfo.lname</h4></a>
-                            <h5>@comm.comment</h5>
-                        </div>
-                    }
-                }
+        <div id="P_@item.Id" class="col-sm-12 col-xs-12 post">
+            <div class="col-sm-12 col-xs-12">
+                @{if (item.role == 0)
+                  {
+                    <h5>Puplic</h5>
+                      }
+                  else
+                  {
+                    <h5>Privet</h5>
+                      }
+                  } 
+            </div>
+            <div class="col-sm-11 col-xs-11">
+                <h2>@item.postone</h2>
             </div>
 
-        }
+            <div class="col-sm-1 col-xs-1">
+                <h4><a href="/Porfile/EditPost/@item.Id">Edit</a></h4>
+            </div>
+
+            <div class="col-sm-12 col-xs-12">
+                    
+                <div class="col-sm-1 col-xs-1">
+                    <h5>@item.reacts.Where(m=>m.Like==1).ToList().Count</h5>
+                </div>
+                <div class="col-sm-2 col-xs-2" >
+                    <input type="button" value="Like" onclick="sendReact('@item.Id','@Session["Iduser"]',1)"/>
+                </div>
+                    
+                    
+                <div class="col-sm-1 col-xs-1">
+                    <h5>@item.reacts.Where(m => m.Like == 0).ToList().Count</h5>
+                </div>
+                <div class="col-sm-1 col-xs-1">
+                    <input type="button" value="DisLike" onclick="sendReact('@item.Id','@Session["Iduser"]',0)" />
+                </div>
+                
+                </div>
+
+            <div class="comment post">
+                <input type="text" id="@item.Id" class="w3-input w3-border" />
+                <input type="button" onclick="sendcomment('@item.Id','@Session["Iduser"]')" value="send" />
+            </div>
+            @{foreach (var comm in item.comments)
+                                {
+                <div class="comment">
+                    <a><h4>@comm.userinfo.Fname  @comm.userinfo.lname</h4></a>
+                    <h5>@comm.comment</h5>
+                </div>
+                                }
+            }
+        </div>
+
+}
     }
 </div>
 

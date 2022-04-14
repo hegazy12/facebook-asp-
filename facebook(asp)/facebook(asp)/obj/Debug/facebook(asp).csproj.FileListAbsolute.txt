@@ -97,3 +97,5 @@ C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Deb
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f13.resources
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f14.resources
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f16.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f17.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f18.resources
