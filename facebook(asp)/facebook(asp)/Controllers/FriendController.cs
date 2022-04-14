@@ -10,12 +10,7 @@ namespace facebook_asp_.Controllers
     public class FriendController : Controller
     {
         private datamodel db = new datamodel();
-        
-        // GET: Friend
-        public ActionResult Index()
-        {
-            return View();
-        }
+
         public ActionResult Addfriend(int? id)
         {
             friendRequstes friendRequstes = new friendRequstes();

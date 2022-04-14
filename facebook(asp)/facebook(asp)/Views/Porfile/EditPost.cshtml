@@ -1,0 +1,34 @@
+﻿@model facebook_asp_.Models.post
+
+@{
+    ViewBag.Title = "EditPost";
+}
+
+<form>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2"> Post </label>
+            <div class="col-md-10">
+                <textarea rows="5" class="form-control" name="postcon">@Model.postone</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2"> Privet </label>
+            <div class="col-md-10">
+                <input type="radio" name="role" value="1" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2"> Puplic </label>
+            <div class="col-md-10">
+                <input type="radio" name="role" value="0" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="send" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>

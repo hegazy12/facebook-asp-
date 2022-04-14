@@ -4,22 +4,34 @@
 }
 
 <style>
-    .post{
+    .post {
         border-style: solid;
         border-color: rgb(45, 52, 129);
-        margin:20px;
+        margin: 20px;
     }
+
     .comment {
         border-style: solid;
         border-color: rgb(45, 52, 129);
         border-width: thin;
         margin: 5px;
         margin-left: 8px;
-        padding:3px;
+        padding: 3px;
     }
+
     input[type=text] {
         width: 100%;
         box-sizing: border-box;
+        margin-left: 10px;
+    }
+
+    .reacr {
+        border-style: solid;
+        border-color: rgb(45, 52, 129,.5);
+        border-width: thin;
+        margin: 5px;
+        margin-left: 8px;
+        padding: 3px;
     }
 
 </style>
@@ -29,40 +41,54 @@
 <br />
 
 <div>
-    <img src="@Model.photo" height="170px"/>
+    <img src="@Model.photo" height="170px" />
     <h2>@Model.Fname @Model.lname</h2>
     <h5>@Model.phone</h5>
-    
+
     <a href="@Url.Action("creatpost", "Porfile")">
         <h5>creatpost</h5>
     </a>
-</div
+</div>
 
 
 
 <div>
     @{foreach (var item in Model.posts)
-      {
-          <div id="P_@item.Id"  class="col-sm-12 col-xs-12 post">
-               <div>
-                   <h2>@item.postone</h2>
-               </div>
-               <div class="comment">
-                   <input type="text" id="@item.Id" class="w3-input w3-border" />
-                   <input type="button" onclick="sendcomment('@item.Id','@Session["Iduser"]')" value="send"/>
-               </div>
-               @{foreach(var comm in item.comments){
-                 <div class="comment">
-                     <a><h4>@comm.userinfo.Fname  @comm.userinfo.lname</h4></a>
-                     <h5>@comm.comment</h5>
-                 </div>
-                } 
-               }
-          </div>
-          
-      }
+        {
+            <div id="P_@item.Id" class="col-sm-12 col-xs-12 post">
+                <div>
+                    <h2>@item.postone</h2>
+                </div>
+                
+                <div class="col-sm-12 col-xs-12 ">
+                    <div class="col-sm-3 col-xs-3 reacr" >
+                        <input type="button" value="Like" onclick="sendReact('@item.Id','@Session["Iduser"]',1)" />
+                    </div>
+                    <div class="col-sm-3 col-xs-3 reacr" >
+                        <input type="button" value="DisLike" onclick="sendReact('@item.Id','@Session["Iduser"]',0)" />
+
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <input type="text" id="@item.Id" class="w3-input w3-border" />
+                    <input type="button" onclick="sendcomment('@item.Id','@Session["Iduser"]')" value="send" />
+                </div>
+                @{foreach (var comm in item.comments)
+                    {
+                        <div class="comment">
+                            <a><h4>@comm.userinfo.Fname  @comm.userinfo.lname</h4></a>
+                            <h5>@comm.comment</h5>
+                        </div>
+                    }
+                }
+            </div>
+
+        }
     }
 </div>
 
 
+
 <script src="~/Scripts/Comment.js"></script>
+<script src="~/Scripts/React.js"></script>

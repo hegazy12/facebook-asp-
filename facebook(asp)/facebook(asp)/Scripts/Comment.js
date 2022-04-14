@@ -1,6 +1,9 @@
 ﻿
 
-function sendcomment(id,idstu){
+
+
+
+function sendcomment(id, idstu) {
     var x = document.getElementById(id);
     var fa = new FormData();
     fa.append("idpost", x.id);

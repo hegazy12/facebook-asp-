@@ -19,46 +19,47 @@ namespace facebook_asp_.Models
         public DbSet<friendRequstes> friendRequstes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-          /*  modelBuilder.Entity<post>()
+          /*  
+           *  modelBuilder.Entity<post>()
                 .HasMany(d => d.comments)
                 .WithOptional()
                 .WillCascadeOnDelete(true);
-            
+                
             modelBuilder.Entity<post>()
                 .HasMany(d => d.reacts)
                 .WithOptional()
                 .WillCascadeOnDelete(true);
-
+                
             modelBuilder.Entity<userinfo>()
                 .HasMany(d => d.posts)
                 .WithOptional()
                 .WillCascadeOnDelete(true);
-
+                
             modelBuilder.Entity<userinfo>()
                 .HasMany(d => d.Comments)
                 .WithOptional()
                 .WillCascadeOnDelete(true);
-
+                
             modelBuilder.Entity<userinfo>()
                 .HasMany(d => d.friendRequstes)
                 .WithOptional(u => u.userinfo)
                 .WillCascadeOnDelete(true);
-
+                
             modelBuilder.Entity<userinfo>()
                 .HasMany(d => d.friends)
                 .WithOptional()
                 .WillCascadeOnDelete(true);
-
+                
             modelBuilder.Entity<userinfo>()
                 .HasMany(d => d.friendRequstes)
                 .WithOptional()
                 .WillCascadeOnDelete(true);
-
+                
             modelBuilder.Entity<userinfo>()
                 .HasMany(d => d.friendRequstes)
                 .WithOptional()
                 .WillCascadeOnDelete(true);
-
+                
             modelBuilder.Entity<userinfo>()
                 .HasMany(d => d.Reacts)
                 .WithOptional()
@@ -113,7 +114,7 @@ public class comments
 public class reacts
 {
     public int Id { get; set; }
-    public string react { get; set; }
+    public int Like { get; set; }
     public int idpost { get; set; }
     
     public int iduserinfo { get; set; }

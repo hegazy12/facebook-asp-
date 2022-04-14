@@ -144,6 +144,7 @@
     <Compile Include="Controllers\FriendController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PorfileController.cs" />
+    <Compile Include="Controllers\ReactController.cs" />
     <Compile Include="Controllers\userinfoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +177,14 @@
     <Compile Include="Migrations\202204130313097_f13.designer.cs">
       <DependentUpon>202204130313097_f13.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204132324234_f14.cs" />
+    <Compile Include="Migrations\202204132324234_f14.designer.cs">
+      <DependentUpon>202204132324234_f14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204132332301_f16.cs" />
+    <Compile Include="Migrations\202204132332301_f16.designer.cs">
+      <DependentUpon>202204132332301_f16.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\datamodel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,6 +213,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\PostStatus.js" />
+    <Content Include="Scripts\React.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -227,11 +238,13 @@
     <Content Include="Views\userinfoes\Index.cshtml" />
     <Content Include="Views\Porfile\Myfriend.cshtml" />
     <Content Include="Views\Porfile\MyFriends.cshtml" />
+    <Content Include="Views\Porfile\EditPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="photos\" />
     <Folder Include="Views\Friend\" />
+    <Folder Include="Views\React\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -267,6 +280,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204130313097_f13.resx">
       <DependentUpon>202204130313097_f13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204132324234_f14.resx">
+      <DependentUpon>202204132324234_f14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204132332301_f16.resx">
+      <DependentUpon>202204132332301_f16.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

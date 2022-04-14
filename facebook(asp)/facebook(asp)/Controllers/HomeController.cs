@@ -12,6 +12,7 @@ namespace facebook_asp_.Controllers
     {
 
         private User1 user = new User1();
+        
         [HttpGet]
         public ActionResult Index()
         {
@@ -23,19 +24,18 @@ namespace facebook_asp_.Controllers
         public ActionResult Index(FormCollection form)
         {
             userinfo u = user.login(form["email"].ToString(),form["pass"].ToString());
-            
+
             if (u == null)
             {
                 return View();
             }
-             
+
             Session["Iduser"] = u.Id.ToString();
             return RedirectToAction("Index", "Porfile");
         }
 
         public ActionResult About()
         {
-
             return View();
         }
 
