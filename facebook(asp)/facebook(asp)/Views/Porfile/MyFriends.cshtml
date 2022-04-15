@@ -15,9 +15,9 @@
     @{foreach (var item in Model)
         {
             <div class="col-sm-4 col-xs-12 user">
-                <img src="@item.userinfo.photo" height="100px" />
-                <h4>@item.userinfo.Fname @item.userinfo.lname</h4>
-                <a href="/Porfile/Myfriend/@item.userinfo.Id">Go To Porfile</a>
+                <img src="@item.userFriend.photo" height="100px" />
+                <h4>@item.userFriend.Fname @item.userFriend.lname</h4>
+                <a href="/Porfile/Myfriend/@item.userFriend.Id">Go To Porfile</a>
             </div>
         }
     }

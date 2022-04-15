@@ -82,7 +82,7 @@ namespace facebook_asp_.Controllers
                 return RedirectToAction("Index", "Home");
             }
             int x1 = Convert.ToInt32(Session["Iduser"]);
-            List<friends> friends = db.friends.Where(x => x.idfriend == x1).ToList();
+            List<friends> friends = db.friends.Where(x => x.id_User == x1).ToList();
             
             return View(friends);
         }
@@ -94,13 +94,9 @@ namespace facebook_asp_.Controllers
                 return RedirectToAction("Index", "Home");
             }
             int x1 = Convert.ToInt32(Session["Iduser"]);
-            List<friendRequstes> Requstes = db.friendRequstes.Where(x => x.idfriend == x1).ToList();
-            List<userinfo> userinfos = new List<userinfo>();
-            foreach(var item in Requstes)
-            {
-                userinfos.Add(db.userinfos.Find(item.idfriend));
-            }
-            return View(userinfos);
+            List<friendRequstes> Requstes = db.friendRequstes.Where(x => x.id_userFriend == x1).ToList();
+            
+            return View(Requstes);
         }
         
         // GET: Porfile/EditPost/5

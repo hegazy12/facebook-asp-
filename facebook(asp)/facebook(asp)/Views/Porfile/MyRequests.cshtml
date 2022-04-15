@@ -1,4 +1,4 @@
-﻿@model IList<facebook_asp_.Models.userinfo>
+﻿@model IList<facebook_asp_.Models.friendRequstes>
 
 @{
     ViewBag.Title = "MyRequests";
@@ -17,9 +17,9 @@
     @{foreach (var item in Model)
         {
             <div class="col-sm-4 col-xs-12 user">
-                <img src="@item.photo" height="100px" />
-                <h4>@item.Fname @item.lname</h4>
-                <h5><a href="/Friend/Accept/@item.Id">Accepting</a></h5>
+                <img src="@item.UserSender.photo" height="100px" />
+                <h4>@item.UserSender.Fname @item.UserSender.lname</h4>
+                <h5><a href="/Friend/Accept/@item.UserSender.Id">Accepting</a></h5>
             </div>
         }
     }

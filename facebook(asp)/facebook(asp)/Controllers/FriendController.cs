@@ -15,13 +15,17 @@ namespace facebook_asp_.Controllers
         {
             int iduser = Convert.ToInt32(Session["Iduser"]);
             int idfriend = Convert.ToInt32(id);
-            db.friendRequstes.RemoveRange(db.friendRequstes.Where(m=>m.idsender == iduser && m.idfriend == idfriend).ToList());
+            db.friendRequstes.RemoveRange(db.friendRequstes.Where(m=>m.id_UserSender == iduser && m.id_userFriend == idfriend).ToList());
             db.SaveChanges();
          
             friendRequstes friendRequstes = new friendRequstes();
-            friendRequstes.idsender = iduser;
-            friendRequstes.idfriend = idfriend;
-            friendRequstes.userinfo = db.userinfos.Find(idfriend);
+            friendRequstes.id_UserSender = iduser;
+            friendRequstes.UserSender = db.userinfos.Find(iduser);
+
+            friendRequstes.id_userFriend = idfriend;
+            friendRequstes.userFriend = db.userinfos.Find(idfriend);
+            
+
             db.friendRequstes.Add(friendRequstes);
             db.SaveChanges();
             return RedirectToAction("Index", "userinfoes");
@@ -32,13 +36,17 @@ namespace facebook_asp_.Controllers
         {
             int iduser = Convert.ToInt32(Session["Iduser"]);
             int idfriend = Convert.ToInt32(id);
-            db.friends.RemoveRange(db.friends.Where(m=>m.iduserinfo == iduser && m.idfriend == idfriend).ToList());
+            db.friends.RemoveRange(db.friends.Where(m=>m.id_User == iduser && m.id_userFriend == idfriend).ToList());
             db.SaveChanges();
 
             friends friend = new friends();
-            friend.idfriend = idfriend;
-            friend.iduserinfo = iduser;
-            friend.userinfo = db.userinfos.Find(idfriend);
+            
+            friend.id_User = iduser;
+            friend.User = db.userinfos.Find(iduser);
+
+            friend.id_userFriend = idfriend;
+            friend.userFriend = db.userinfos.Find(idfriend);
+
             db.friends.Add(friend);
             db.SaveChanges();
             

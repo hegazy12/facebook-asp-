@@ -125,16 +125,23 @@ public class reacts
 public class friends
 {
     public int Id { set; get; }
-    public int iduserinfo { get; set; }
-    public int idfriend { get; set; }
-    public virtual userinfo userinfo { get; set; }
-}
+
+   public int id_User { get; set; }
+   public virtual userinfo User { get; set; }
+
+   public int id_userFriend { get; set; }
+   public virtual userinfo userFriend { get; set; }
+    
+    }
 
 public class friendRequstes
 {
     public int Id {set;get;}
-    public int idsender {get;set;}
-    public int idfriend {get;set;}
-    public virtual userinfo userinfo {get;set;}
+
+    public  int id_UserSender {get;set;}
+    public virtual userinfo UserSender {get;set;}
+
+    public int id_userFriend {get; set;}
+    public virtual userinfo userFriend {get;set;}
 }
 }

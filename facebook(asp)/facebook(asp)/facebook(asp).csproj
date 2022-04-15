@@ -193,6 +193,14 @@
     <Compile Include="Migrations\202204141318340_f18.designer.cs">
       <DependentUpon>202204141318340_f18.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204151941587_r1.cs" />
+    <Compile Include="Migrations\202204151941587_r1.designer.cs">
+      <DependentUpon>202204151941587_r1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204152207436_r2.cs" />
+    <Compile Include="Migrations\202204152207436_r2.designer.cs">
+      <DependentUpon>202204152207436_r2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\datamodel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -301,6 +309,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204141318340_f18.resx">
       <DependentUpon>202204141318340_f18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204151941587_r1.resx">
+      <DependentUpon>202204151941587_r1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204152207436_r2.resx">
+      <DependentUpon>202204152207436_r2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

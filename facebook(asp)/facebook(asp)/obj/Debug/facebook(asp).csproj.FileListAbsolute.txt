@@ -83,12 +83,7 @@ C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\bin\Sys
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\bin\System.Web.Http.WebHost.xml
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).csproj.AssemblyReference.cache
-C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).csproj.CoreCompileInputs.cache
-C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).csproj.CopyComplete
-C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).dll
-C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).pdb
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.m.resources
-C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).csproj.GenerateResource.cache
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.gg.resources
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f8.resources
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f9.resources
@@ -99,3 +94,10 @@ C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Deb
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f16.resources
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f17.resources
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.f18.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.r1.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).csproj.GenerateResource.cache
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).csproj.CoreCompileInputs.cache
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).csproj.CopyComplete
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).dll
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).pdb
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.r2.resources
