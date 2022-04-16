@@ -261,11 +261,12 @@
     <Content Include="Views\Porfile\EditPost.cshtml" />
     <Content Include="Views\Porfile\MyRequests.cshtml" />
     <Content Include="Views\Porfile\MyReq.cshtml" />
+    <Content Include="Views\Friend\SearchByName.cshtml" />
+    <Content Include="Views\Friend\SearchByEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="photos\" />
-    <Folder Include="Views\Friend\" />
     <Folder Include="Views\React\" />
   </ItemGroup>
   <ItemGroup>

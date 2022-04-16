@@ -8,19 +8,38 @@
         border-style: solid;
         border-color: rgb(45, 52, 129);
         margin: 20px;
-        padding:10px;
+        padding: 10px;
     }
 </style>
 
+<br />
+<br />
+<div>
+    <form method="post" action="/Friend/SearchByName">
+        <label>Name</label>
+        <input type="text" name="name" />
+        <input type="submit" value="send" />
+    </form>
+</div>
+
+<br />
+
+<div>
+    <form method="post" action="/Friend/SearchByEmail">
+        <label>Email</label>
+        <input type="text" name="email" />
+        <input type="submit" value="send" />
+    </form>
+</div>
 
 <div class="row">
-    @{foreach(var item in Model)
-      {
-      <div class="col-sm-4 col-xs-12 user" >
-            <img src="@item.photo" height="100px" />
-            <h4>@item.Fname @item.lname</h4>
-            <a href="/userinfoes/Details/@item.Id" >go to details</a>     
-        </div>
-      }
+    @{foreach (var item in Model)
+        {
+            <div class="col-sm-4 col-xs-12 user">
+                <img src="@item.photo" height="100px" />
+                <h4>@item.Fname @item.lname</h4>
+                <a href="/userinfoes/Details/@item.Id">go to details</a>
+            </div>
+        }
     }
 </div>

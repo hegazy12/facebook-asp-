@@ -101,5 +101,27 @@ namespace facebook_asp_.Controllers
             return RedirectToAction("Index", "userinfoes");
         }
 
+        
+        
+        public ActionResult SearchByName(FormCollection form)
+        {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            string x =Convert.ToString(form["name"]);
+            return View(db.userinfos.Where(m => m.Fname == x || m.lname == x).ToList());
+        }
+
+        public ActionResult  SearchByEmail(FormCollection form)
+        {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            string x = Convert.ToString(form["email"]);
+            return View(db.userinfos.Where(m=>m.email == x).ToList());
+        }
+
     }
 }
