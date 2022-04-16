@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202204152207436_r2.designer.cs">
       <DependentUpon>202204152207436_r2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204152238025_d1.cs" />
+    <Compile Include="Migrations\202204152238025_d1.designer.cs">
+      <DependentUpon>202204152238025_d1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\datamodel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -256,6 +260,7 @@
     <Content Include="Views\Porfile\MyFriends.cshtml" />
     <Content Include="Views\Porfile\EditPost.cshtml" />
     <Content Include="Views\Porfile\MyRequests.cshtml" />
+    <Content Include="Views\Porfile\MyReq.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -315,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204152207436_r2.resx">
       <DependentUpon>202204152207436_r2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204152238025_d1.resx">
+      <DependentUpon>202204152238025_d1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

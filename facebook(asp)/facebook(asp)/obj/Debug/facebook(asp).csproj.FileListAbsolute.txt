@@ -101,3 +101,4 @@ C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Deb
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).dll
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook(asp).pdb
 C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.r2.resources
+C:\Users\abdo\Documents\GitHub\facebook-asp-\facebook(asp)\facebook(asp)\obj\Debug\facebook_asp_.Migrations.d1.resources

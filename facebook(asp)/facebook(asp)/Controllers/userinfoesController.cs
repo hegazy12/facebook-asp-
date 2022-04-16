@@ -25,7 +25,16 @@ namespace facebook_asp_.Controllers
             int x = Convert.ToInt32(Session["Iduser"]);
 
             List<userinfo> userinfos = db.userinfos.Where(m=>m.Id !=x).ToList();
-            
+            List<friends> friends = db.friends.Where(m => m.id_User == x).ToList();
+            List<friendRequstes> requstes = db.friendRequstes.Where(m => m.id_UserSender == x).ToList();
+
+            foreach(var item in friends){
+                userinfos.Remove(item.userFriend);
+            }
+            foreach(var item in requstes)
+            {
+                userinfos.Remove(item.userFriend);
+            }
             return View(userinfos);
         }
 
@@ -92,16 +101,21 @@ namespace facebook_asp_.Controllers
 
             int id = Convert.ToInt32(Session["Iduser"]);
             userinfo userinfo = db.userinfos.Find(id);
-            if (userinfo == null)
-            {
-                return HttpNotFound();
-            }
+            
             return View(userinfo);
         }
          
         [HttpPost]
-        public ActionResult Edit(userinfo userinfo)
-        {   
+        public ActionResult Edit(userinfo userinfo, HttpPostedFileBase photo)
+        {
+            if(photo != null)
+            {
+                string _FileName = Path.GetFileName(photo.FileName);
+                string _path = Path.Combine(Server.MapPath("~/photos"), _FileName);
+                photo.SaveAs(_path);
+                userinfo.photo = "/photos/" + _FileName;
+
+            }
              
             if (ModelState.IsValid)
             {
@@ -109,6 +123,7 @@ namespace facebook_asp_.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(userinfo);
         }
 
@@ -132,6 +147,7 @@ namespace facebook_asp_.Controllers
             return View(userinfo);
         }
 
+
         // POST: userinfoes/Delete/5
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
@@ -141,6 +157,7 @@ namespace facebook_asp_.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         } 
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)

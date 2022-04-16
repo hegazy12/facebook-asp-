@@ -34,12 +34,14 @@
                         }
                         else
                         {
-                            <li>@Html.ActionLink("MyFriends", "MyFriends", "Porfile")</li>
-                            <li>@Html.ActionLink("MyRequests", "MyRequests", "Porfile")</li>
-                            <li>@Html.ActionLink("People", "Index", "userinfoes")</li>
-                            <li>@Html.ActionLink("Edit", "Edit", "userinfoes")</li>
-                            <li>@Html.ActionLink("logout", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            
+                            <li>@Html.ActionLink("MyFriends","MyFriends","Porfile")</li>
+                            <li>@Html.ActionLink("Friendship requests","MyRequests","Porfile")</li>
+                            <li>@Html.ActionLink("MyRequests","MyReq","Porfile") </li>
+                            <li>@Html.ActionLink("People","Index","userinfoes")</li>
+                            <li>@Html.ActionLink("Edit","Edit","userinfoes")</li>
+                            <li>@Html.ActionLink("logout","Index","Home")</li>
+                            <li>@Html.ActionLink("About","About","Home")</li>
                         }
                     }
 

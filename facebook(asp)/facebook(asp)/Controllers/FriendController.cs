@@ -13,6 +13,11 @@ namespace facebook_asp_.Controllers
 
         public ActionResult Addfriend(int? id)
         {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             int iduser = Convert.ToInt32(Session["Iduser"]);
             int idfriend = Convert.ToInt32(id);
             db.friendRequstes.RemoveRange(db.friendRequstes.Where(m=>m.id_UserSender == iduser && m.id_userFriend == idfriend).ToList());
@@ -31,13 +36,39 @@ namespace facebook_asp_.Controllers
             return RedirectToAction("Index", "userinfoes");
         }
 
+        public ActionResult CancelRequest(int? id)
+        {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null ||  id == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            int iduser = Convert.ToInt32(Session["Iduser"]);
+            int idfriend = Convert.ToInt32(id);
+
+            db.friendRequstes.RemoveRange(
+                db.friendRequstes.Where(
+                    m => m.id_userFriend == idfriend && m.id_UserSender == iduser
+                    ).ToList());
+
+            db.SaveChanges();
+            return RedirectToAction("Index", "userinfoes");
+        }
+
 
         public ActionResult Accept(int? id)
         {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             int iduser = Convert.ToInt32(Session["Iduser"]);
             int idfriend = Convert.ToInt32(id);
+
             db.friends.RemoveRange(db.friends.Where(m=>m.id_User == iduser && m.id_userFriend == idfriend).ToList());
             db.SaveChanges();
+
 
             friends friend = new friends();
             
@@ -49,7 +80,24 @@ namespace facebook_asp_.Controllers
 
             db.friends.Add(friend);
             db.SaveChanges();
-            
+
+
+            friends friend1 = new friends();
+
+            friend1.id_User = idfriend;
+            friend1.User = db.userinfos.Find(idfriend);
+
+            friend1.id_userFriend = iduser;
+            friend1.userFriend = db.userinfos.Find(iduser);
+
+            db.friends.Add(friend1);
+            db.SaveChanges();
+
+
+            db.friendRequstes.RemoveRange(
+                db.friendRequstes.Where(m => m.id_UserSender == idfriend && m.id_userFriend == iduser).ToList());
+            db.SaveChanges();
+
             return RedirectToAction("Index", "userinfoes");
         }
 

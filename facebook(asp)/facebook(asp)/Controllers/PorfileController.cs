@@ -37,6 +37,10 @@ namespace facebook_asp_.Controllers
         [HttpGet]
         public ActionResult creatpost()
         {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -61,6 +65,10 @@ namespace facebook_asp_.Controllers
 
         public ActionResult Myfriend(int? id)
         {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null || id==null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             userinfo userinfo = new userinfo();
 
             try
@@ -98,10 +106,28 @@ namespace facebook_asp_.Controllers
             
             return View(Requstes);
         }
-        
+
+        public ActionResult MyReq()
+        {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            int x1 = Convert.ToInt32(Session["Iduser"]);
+            List<friendRequstes> Requstes = db.friendRequstes.Where(x => x.id_UserSender == x1).ToList();
+            return View(Requstes);
+
+        }
+
+
+
         // GET: Porfile/EditPost/5
         public ActionResult EditPost(int? id)
         {
+            if (Session["Iduser"] == "0" || Session["Iduser"] == null || id==null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
